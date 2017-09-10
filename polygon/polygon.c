@@ -3,26 +3,27 @@
 
 
 void draw_point() {
-    //glClear(GL_COLOR_BUFFER_BIT);
     int i;
+    //point color
     glColor3f (0.0, 0.0, 1.0);
     glPointSize(10);
 
+    //draw 8 points
     glBegin(GL_POINTS);
     for (i = 0; i < 8; i++) {
          glVertex2f(-0.9, ((GLfloat)i * 0.1));
     }
 
     glEnd();
-    
-    glFlush(); 
 }
 
 void drawLineStrip()
 {
+      //triangle line color
       glColor3f (0.0, 0.0, 1.0);
       glPointSize(10);
       glBegin(GL_LINE_LOOP);
+      //define 3 point of triangle
       glVertex2f(0.0,0.0);
       glVertex2f(-0.3,-0.5);
       glVertex2f(0.3,-0.5);
@@ -30,7 +31,9 @@ void drawLineStrip()
 }
 
 void render_scene() {
+    //clear screen
     glClear(GL_COLOR_BUFFER_BIT);
+    //set color
     glColor3f(0.0,1.0,0.0);
 
     glRectf(0.25f, 0.75f, 0.75f,0.25f);
@@ -61,7 +64,6 @@ void init(int argc, char *argv[]) {
     glutInitWindowSize(400, 400);
 
     glutCreateWindow("kaka's first opengl program");
-    //glutDisplayFunc(triangle_display);
     glutDisplayFunc(render_scene);
 }
 
